@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/spacing_md"
+    app:cardCornerRadius="@dimen/radius_lg"
+    app:cardElevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_lg">
+
+        <!-- Category Icon Tile -->
+        <View
+            android:id="@+id/icon_background"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:background="@drawable/shape_card_background"
+            android:backgroundTint="@color/accent_food_light"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/category_icon"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_category_food"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintStart_toStartOf="@id/icon_background"
+            app:layout_constraintEnd_toEndOf="@id/icon_background"
+            app:layout_constraintTop_toTopOf="@id/icon_background"
+            app:layout_constraintBottom_toBottomOf="@id/icon_background" />
+
+        <!-- Amount (Right Side) -->
+        <TextView
+            android:id="@+id/tv_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹2,400"
+            android:textSize="@dimen/text_size_lg"
+            android:textStyle="bold"
+            android:textColor="@color/on_surface"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_md"
+            android:layout_marginEnd="@dimen/spacing_md"
+            android:text="Dinner at Johnson's Cafe"
+            android:textSize="@dimen/text_size_md"
+            android:textStyle="bold"
+            android:textColor="@color/on_surface"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintStart_toEndOf="@id/icon_background"
+            app:layout_constraintEnd_toStartOf="@id/tv_amount"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Date -->
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_md"
+            android:layout_marginTop="@dimen/spacing_xs"
+            android:text="14 Jan 2025"
+            android:textSize="@dimen/text_size_xs"
+            android:textColor="@color/text_secondary"
+            app:layout_constraintStart_toEndOf="@id/icon_background"
+            app:layout_constraintEnd_toStartOf="@id/tv_amount"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <!-- Participants Avatars -->
+        <LinearLayout
+            android:id="@+id/avatars_container"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="@dimen/spacing_md"
+            android:layout_marginTop="@dimen/spacing_sm"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toEndOf="@id/icon_background"
+            app:layout_constraintEnd_toStartOf="@id/tv_amount"
+            app:layout_constraintTop_toBottomOf="@id/tv_date" />
+
+        <!-- Paid By -->
+        <TextView
+            android:id="@+id/tv_paid_by"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_md"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:text="Paid by Riya"
+            android:textSize="@dimen/text_size_xs"
+            android:textColor="@color/text_secondary"
+            app:layout_constraintStart_toEndOf="@id/icon_background"
+            app:layout_constraintEnd_toStartOf="@id/tv_amount"
+            app:layout_constraintTop_toBottomOf="@id/avatars_container" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

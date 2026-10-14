@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-mergeDebugResources-44:\\layout\\fragment_expenses.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\layout\\fragment_expenses.xml"
+    },
+    {
+        "merged": "com.tripsync.app-mergeDebugResources-44:/layout/item_trip_selector.xml",
+        "source": "com.tripsync.app-main-47:/layout/item_trip_selector.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-mergeDebugResources-44:\\layout\\fragment_packing.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\layout\\fragment_packing.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-mergeDebugResources-44:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-mergeDebugResources-44:\\layout\\item_packing.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\layout\\item_packing.xml"
+    },
+    {
+        "merged": "com.tripsync.app-mergeDebugResources-44:/layout/activity_main.xml",
+        "source": "com.tripsync.app-main-47:/layout/activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-mergeDebugResources-44:\\layout\\dialog_add_expense.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\layout\\dialog_add_expense.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-mergeDebugResources-44:\\layout\\fragment_gallery.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\layout\\fragment_gallery.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-mergeDebugResources-44:\\layout\\item_gallery.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\layout\\item_gallery.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-mergeDebugResources-44:\\layout\\dialog_add_packing.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\layout\\dialog_add_packing.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-mergeDebugResources-44:\\layout\\item_expense.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\layout\\item_expense.xml"
+    },
+    {
+        "merged": "com.tripsync.app-mergeDebugResources-44:/layout/item_member.xml",
+        "source": "com.tripsync.app-main-47:/layout/item_member.xml"
+    }
+]

@@ -1,0 +1,399 @@
+package com.tripsync.app.db.dao;
+
+import android.database.Cursor;
+import androidx.lifecycle.LiveData;
+import androidx.room.EntityDeletionOrUpdateAdapter;
+import androidx.room.EntityInsertionAdapter;
+import androidx.room.RoomDatabase;
+import androidx.room.RoomSQLiteQuery;
+import androidx.room.util.CursorUtil;
+import androidx.room.util.DBUtil;
+import androidx.sqlite.db.SupportSQLiteStatement;
+import com.tripsync.app.db.entities.Trip;
+import java.lang.Class;
+import java.lang.Exception;
+import java.lang.Integer;
+import java.lang.Override;
+import java.lang.String;
+import java.lang.SuppressWarnings;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.Callable;
+import javax.annotation.processing.Generated;
+
+@Generated("androidx.room.RoomProcessor")
+@SuppressWarnings({"unchecked", "deprecation"})
+public final class TripDao_Impl implements TripDao {
+  private final RoomDatabase __db;
+
+  private final EntityInsertionAdapter<Trip> __insertionAdapterOfTrip;
+
+  private final EntityDeletionOrUpdateAdapter<Trip> __deletionAdapterOfTrip;
+
+  private final EntityDeletionOrUpdateAdapter<Trip> __updateAdapterOfTrip;
+
+  public TripDao_Impl(RoomDatabase __db) {
+    this.__db = __db;
+    this.__insertionAdapterOfTrip = new EntityInsertionAdapter<Trip>(__db) {
+      @Override
+      public String createQuery() {
+        return "INSERT OR ABORT INTO `trips` (`id`,`name`,`startDateMillis`,`endDateMillis`,`avatarPath`) VALUES (?,?,?,?,?)";
+      }
+
+      @Override
+      public void bind(SupportSQLiteStatement stmt, Trip value) {
+        if (value.id == null) {
+          stmt.bindNull(1);
+        } else {
+          stmt.bindString(1, value.id);
+        }
+        if (value.name == null) {
+          stmt.bindNull(2);
+        } else {
+          stmt.bindString(2, value.name);
+        }
+        stmt.bindLong(3, value.startDateMillis);
+        stmt.bindLong(4, value.endDateMillis);
+        if (value.avatarPath == null) {
+          stmt.bindNull(5);
+        } else {
+          stmt.bindString(5, value.avatarPath);
+        }
+      }
+    };
+    this.__deletionAdapterOfTrip = new EntityDeletionOrUpdateAdapter<Trip>(__db) {
+      @Override
+      public String createQuery() {
+        return "DELETE FROM `trips` WHERE `id` = ?";
+      }
+
+      @Override
+      public void bind(SupportSQLiteStatement stmt, Trip value) {
+        if (value.id == null) {
+          stmt.bindNull(1);
+        } else {
+          stmt.bindString(1, value.id);
+        }
+      }
+    };
+    this.__updateAdapterOfTrip = new EntityDeletionOrUpdateAdapter<Trip>(__db) {
+      @Override
+      public String createQuery() {
+        return "UPDATE OR ABORT `trips` SET `id` = ?,`name` = ?,`startDateMillis` = ?,`endDateMillis` = ?,`avatarPath` = ? WHERE `id` = ?";
+      }
+
+      @Override
+      public void bind(SupportSQLiteStatement stmt, Trip value) {
+        if (value.id == null) {
+          stmt.bindNull(1);
+        } else {
+          stmt.bindString(1, value.id);
+        }
+        if (value.name == null) {
+          stmt.bindNull(2);
+        } else {
+          stmt.bindString(2, value.name);
+        }
+        stmt.bindLong(3, value.startDateMillis);
+        stmt.bindLong(4, value.endDateMillis);
+        if (value.avatarPath == null) {
+          stmt.bindNull(5);
+        } else {
+          stmt.bindString(5, value.avatarPath);
+        }
+        if (value.id == null) {
+          stmt.bindNull(6);
+        } else {
+          stmt.bindString(6, value.id);
+        }
+      }
+    };
+  }
+
+  @Override
+  public void insert(final Trip trip) {
+    __db.assertNotSuspendingTransaction();
+    __db.beginTransaction();
+    try {
+      __insertionAdapterOfTrip.insert(trip);
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+    }
+  }
+
+  @Override
+  public void delete(final Trip trip) {
+    __db.assertNotSuspendingTransaction();
+    __db.beginTransaction();
+    try {
+      __deletionAdapterOfTrip.handle(trip);
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+    }
+  }
+
+  @Override
+  public void update(final Trip trip) {
+    __db.assertNotSuspendingTransaction();
+    __db.beginTransaction();
+    try {
+      __updateAdapterOfTrip.handle(trip);
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+    }
+  }
+
+  @Override
+  public LiveData<List<Trip>> getAllTrips() {
+    final String _sql = "SELECT * FROM trips ORDER BY startDateMillis DESC";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    return __db.getInvalidationTracker().createLiveData(new String[]{"trips"}, false, new Callable<List<Trip>>() {
+      @Override
+      public List<Trip> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+          final int _cursorIndexOfName = CursorUtil.getColumnIndexOrThrow(_cursor, "name");
+          final int _cursorIndexOfStartDateMillis = CursorUtil.getColumnIndexOrThrow(_cursor, "startDateMillis");
+          final int _cursorIndexOfEndDateMillis = CursorUtil.getColumnIndexOrThrow(_cursor, "endDateMillis");
+          final int _cursorIndexOfAvatarPath = CursorUtil.getColumnIndexOrThrow(_cursor, "avatarPath");
+          final List<Trip> _result = new ArrayList<Trip>(_cursor.getCount());
+          while(_cursor.moveToNext()) {
+            final Trip _item;
+            final String _tmpId;
+            if (_cursor.isNull(_cursorIndexOfId)) {
+              _tmpId = null;
+            } else {
+              _tmpId = _cursor.getString(_cursorIndexOfId);
+            }
+            final String _tmpName;
+            if (_cursor.isNull(_cursorIndexOfName)) {
+              _tmpName = null;
+            } else {
+              _tmpName = _cursor.getString(_cursorIndexOfName);
+            }
+            final long _tmpStartDateMillis;
+            _tmpStartDateMillis = _cursor.getLong(_cursorIndexOfStartDateMillis);
+            final long _tmpEndDateMillis;
+            _tmpEndDateMillis = _cursor.getLong(_cursorIndexOfEndDateMillis);
+            _item = new Trip(_tmpId,_tmpName,_tmpStartDateMillis,_tmpEndDateMillis);
+            if (_cursor.isNull(_cursorIndexOfAvatarPath)) {
+              _item.avatarPath = null;
+            } else {
+              _item.avatarPath = _cursor.getString(_cursorIndexOfAvatarPath);
+            }
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+        }
+      }
+
+      @Override
+      protected void finalize() {
+        _statement.release();
+      }
+    });
+  }
+
+  @Override
+  public LiveData<Trip> getTripById(final String tripId) {
+    final String _sql = "SELECT * FROM trips WHERE id = ?";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (tripId == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, tripId);
+    }
+    return __db.getInvalidationTracker().createLiveData(new String[]{"trips"}, false, new Callable<Trip>() {
+      @Override
+      public Trip call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+          final int _cursorIndexOfName = CursorUtil.getColumnIndexOrThrow(_cursor, "name");
+          final int _cursorIndexOfStartDateMillis = CursorUtil.getColumnIndexOrThrow(_cursor, "startDateMillis");
+          final int _cursorIndexOfEndDateMillis = CursorUtil.getColumnIndexOrThrow(_cursor, "endDateMillis");
+          final int _cursorIndexOfAvatarPath = CursorUtil.getColumnIndexOrThrow(_cursor, "avatarPath");
+          final Trip _result;
+          if(_cursor.moveToFirst()) {
+            final String _tmpId;
+            if (_cursor.isNull(_cursorIndexOfId)) {
+              _tmpId = null;
+            } else {
+              _tmpId = _cursor.getString(_cursorIndexOfId);
+            }
+            final String _tmpName;
+            if (_cursor.isNull(_cursorIndexOfName)) {
+              _tmpName = null;
+            } else {
+              _tmpName = _cursor.getString(_cursorIndexOfName);
+            }
+            final long _tmpStartDateMillis;
+            _tmpStartDateMillis = _cursor.getLong(_cursorIndexOfStartDateMillis);
+            final long _tmpEndDateMillis;
+            _tmpEndDateMillis = _cursor.getLong(_cursorIndexOfEndDateMillis);
+            _result = new Trip(_tmpId,_tmpName,_tmpStartDateMillis,_tmpEndDateMillis);
+            if (_cursor.isNull(_cursorIndexOfAvatarPath)) {
+              _result.avatarPath = null;
+            } else {
+              _result.avatarPath = _cursor.getString(_cursorIndexOfAvatarPath);
+            }
+          } else {
+            _result = null;
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+        }
+      }
+
+      @Override
+      protected void finalize() {
+        _statement.release();
+      }
+    });
+  }
+
+  @Override
+  public Trip getTripByIdSync(final String tripId) {
+    final String _sql = "SELECT * FROM trips WHERE id = ?";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (tripId == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, tripId);
+    }
+    __db.assertNotSuspendingTransaction();
+    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+    try {
+      final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+      final int _cursorIndexOfName = CursorUtil.getColumnIndexOrThrow(_cursor, "name");
+      final int _cursorIndexOfStartDateMillis = CursorUtil.getColumnIndexOrThrow(_cursor, "startDateMillis");
+      final int _cursorIndexOfEndDateMillis = CursorUtil.getColumnIndexOrThrow(_cursor, "endDateMillis");
+      final int _cursorIndexOfAvatarPath = CursorUtil.getColumnIndexOrThrow(_cursor, "avatarPath");
+      final Trip _result;
+      if(_cursor.moveToFirst()) {
+        final String _tmpId;
+        if (_cursor.isNull(_cursorIndexOfId)) {
+          _tmpId = null;
+        } else {
+          _tmpId = _cursor.getString(_cursorIndexOfId);
+        }
+        final String _tmpName;
+        if (_cursor.isNull(_cursorIndexOfName)) {
+          _tmpName = null;
+        } else {
+          _tmpName = _cursor.getString(_cursorIndexOfName);
+        }
+        final long _tmpStartDateMillis;
+        _tmpStartDateMillis = _cursor.getLong(_cursorIndexOfStartDateMillis);
+        final long _tmpEndDateMillis;
+        _tmpEndDateMillis = _cursor.getLong(_cursorIndexOfEndDateMillis);
+        _result = new Trip(_tmpId,_tmpName,_tmpStartDateMillis,_tmpEndDateMillis);
+        if (_cursor.isNull(_cursorIndexOfAvatarPath)) {
+          _result.avatarPath = null;
+        } else {
+          _result.avatarPath = _cursor.getString(_cursorIndexOfAvatarPath);
+        }
+      } else {
+        _result = null;
+      }
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
+  }
+
+  @Override
+  public LiveData<Integer> getTripCount() {
+    final String _sql = "SELECT COUNT(*) FROM trips";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    return __db.getInvalidationTracker().createLiveData(new String[]{"trips"}, false, new Callable<Integer>() {
+      @Override
+      public Integer call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final Integer _result;
+          if(_cursor.moveToFirst()) {
+            final Integer _tmp;
+            if (_cursor.isNull(0)) {
+              _tmp = null;
+            } else {
+              _tmp = _cursor.getInt(0);
+            }
+            _result = _tmp;
+          } else {
+            _result = null;
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+        }
+      }
+
+      @Override
+      protected void finalize() {
+        _statement.release();
+      }
+    });
+  }
+
+  @Override
+  public List<Trip> getAllTripsSync() {
+    final String _sql = "SELECT * FROM trips ORDER BY startDateMillis DESC";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    __db.assertNotSuspendingTransaction();
+    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+    try {
+      final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+      final int _cursorIndexOfName = CursorUtil.getColumnIndexOrThrow(_cursor, "name");
+      final int _cursorIndexOfStartDateMillis = CursorUtil.getColumnIndexOrThrow(_cursor, "startDateMillis");
+      final int _cursorIndexOfEndDateMillis = CursorUtil.getColumnIndexOrThrow(_cursor, "endDateMillis");
+      final int _cursorIndexOfAvatarPath = CursorUtil.getColumnIndexOrThrow(_cursor, "avatarPath");
+      final List<Trip> _result = new ArrayList<Trip>(_cursor.getCount());
+      while(_cursor.moveToNext()) {
+        final Trip _item;
+        final String _tmpId;
+        if (_cursor.isNull(_cursorIndexOfId)) {
+          _tmpId = null;
+        } else {
+          _tmpId = _cursor.getString(_cursorIndexOfId);
+        }
+        final String _tmpName;
+        if (_cursor.isNull(_cursorIndexOfName)) {
+          _tmpName = null;
+        } else {
+          _tmpName = _cursor.getString(_cursorIndexOfName);
+        }
+        final long _tmpStartDateMillis;
+        _tmpStartDateMillis = _cursor.getLong(_cursorIndexOfStartDateMillis);
+        final long _tmpEndDateMillis;
+        _tmpEndDateMillis = _cursor.getLong(_cursorIndexOfEndDateMillis);
+        _item = new Trip(_tmpId,_tmpName,_tmpStartDateMillis,_tmpEndDateMillis);
+        if (_cursor.isNull(_cursorIndexOfAvatarPath)) {
+          _item.avatarPath = null;
+        } else {
+          _item.avatarPath = _cursor.getString(_cursorIndexOfAvatarPath);
+        }
+        _result.add(_item);
+      }
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
+  }
+
+  public static List<Class<?>> getRequiredConverters() {
+    return Collections.emptyList();
+  }
+}

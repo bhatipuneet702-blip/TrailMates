@@ -1,0 +1,162 @@
+[
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-debug-45:\\drawable_shape_card_background.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\drawable\\shape_card_background.xml"
+    },
+    {
+        "merged": "com.tripsync.app-debug-45:/drawable_ic_image.xml.flat",
+        "source": "com.tripsync.app-main-47:/drawable/ic_image.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-debug-45:\\drawable_ic_expenses.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\drawable\\ic_expenses.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-debug-45:\\drawable_ic_packing.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\drawable\\ic_packing.xml"
+    },
+    {
+        "merged": "com.tripsync.app-debug-45:/drawable_ic_groups.xml.flat",
+        "source": "com.tripsync.app-main-47:/drawable/ic_groups.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-debug-45:\\drawable_ic_category_food.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\drawable\\ic_category_food.xml"
+    },
+    {
+        "merged": "com.tripsync.app-debug-45:/layout_activity_main.xml.flat",
+        "source": "com.tripsync.app-main-47:/layout/activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-debug-45:\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\menu\\bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.tripsync.app-debug-45:/drawable_ic_wallet.xml.flat",
+        "source": "com.tripsync.app-main-47:/drawable/ic_wallet.xml"
+    },
+    {
+        "merged": "com.tripsync.app-debug-45:/drawable_ic_checklist.xml.flat",
+        "source": "com.tripsync.app-main-47:/drawable/ic_checklist.xml"
+    },
+    {
+        "merged": "com.tripsync.app-debug-45:/drawable_ic_shopping_bag.xml.flat",
+        "source": "com.tripsync.app-main-47:/drawable/ic_shopping_bag.xml"
+    },
+    {
+        "merged": "com.tripsync.app-debug-45:/drawable_ic_directions_bus.xml.flat",
+        "source": "com.tripsync.app-main-47:/drawable/ic_directions_bus.xml"
+    },
+    {
+        "merged": "com.tripsync.app-debug-45:/layout_item_trip_selector.xml.flat",
+        "source": "com.tripsync.app-main-47:/layout/item_trip_selector.xml"
+    },
+    {
+        "merged": "com.tripsync.app-debug-45:/drawable_ic_more_vert.xml.flat",
+        "source": "com.tripsync.app-main-47:/drawable/ic_more_vert.xml"
+    },
+    {
+        "merged": "com.tripsync.app-debug-45:/drawable_ic_hotel.xml.flat",
+        "source": "com.tripsync.app-main-47:/drawable/ic_hotel.xml"
+    },
+    {
+        "merged": "com.tripsync.app-debug-45:/drawable_ic_restaurant.xml.flat",
+        "source": "com.tripsync.app-main-47:/drawable/ic_restaurant.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-debug-45:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-debug-45:\\drawable_ic_category_transport.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\drawable\\ic_category_transport.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-debug-45:\\layout_item_packing.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\layout\\item_packing.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-debug-45:\\layout_item_gallery.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\layout\\item_gallery.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-debug-45:\\drawable_ic_category_hotel.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\drawable\\ic_category_hotel.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-debug-45:\\layout_fragment_expenses.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\layout\\fragment_expenses.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-debug-45:\\layout_item_expense.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\layout\\item_expense.xml"
+    },
+    {
+        "merged": "com.tripsync.app-debug-45:/drawable_ic_arrow_back.xml.flat",
+        "source": "com.tripsync.app-main-47:/drawable/ic_arrow_back.xml"
+    },
+    {
+        "merged": "com.tripsync.app-debug-45:/drawable_ic_people.xml.flat",
+        "source": "com.tripsync.app-main-47:/drawable/ic_people.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-debug-45:\\drawable_ic_category_fuel.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\drawable\\ic_category_fuel.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-debug-45:\\layout_fragment_packing.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\layout\\fragment_packing.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-debug-45:\\drawable_ic_delete.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\drawable\\ic_delete.xml"
+    },
+    {
+        "merged": "com.tripsync.app-debug-45:/drawable_ic_account_balance_wallet.xml.flat",
+        "source": "com.tripsync.app-main-47:/drawable/ic_account_balance_wallet.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-debug-45:\\layout_dialog_add_packing.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\layout\\dialog_add_packing.xml"
+    },
+    {
+        "merged": "com.tripsync.app-debug-45:/drawable_ic_expand_more.xml.flat",
+        "source": "com.tripsync.app-main-47:/drawable/ic_expand_more.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-debug-45:\\drawable_ic_banner_mountain.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\drawable\\ic_banner_mountain.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-debug-45:\\layout_fragment_gallery.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\layout\\fragment_gallery.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-debug-45:\\drawable_ic_add.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\drawable\\ic_add.xml"
+    },
+    {
+        "merged": "com.tripsync.app-debug-45:/drawable_ic_local_gas_station.xml.flat",
+        "source": "com.tripsync.app-main-47:/drawable/ic_local_gas_station.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-debug-45:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.tripsync.app-debug-45:/layout_item_member.xml.flat",
+        "source": "com.tripsync.app-main-47:/layout/item_member.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-debug-45:\\layout_dialog_add_expense.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\layout\\dialog_add_expense.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-debug-45:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-debug-45:\\drawable_ic_gallery.xml.flat",
+        "source": "C:\\Users\\ASUS\\.gradle\\daemon\\8.6\\com.tripsync.app-main-47:\\drawable\\ic_gallery.xml"
+    }
+]
