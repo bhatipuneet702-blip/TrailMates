@@ -1,6 +1,7 @@
 package com.tripsync.app.repository;
 
 import android.app.Application;
+import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 
@@ -14,14 +15,19 @@ import java.util.UUID;
 
 public class PackingRepository {
     private final PackingDao packingDao;
+    private final AppDatabase db;
 
     public PackingRepository(Application application) {
-        AppDatabase db = AppDatabase.getInstance(application);
+        db = AppDatabase.getInstance(application);
         this.packingDao = db.packingDao();
     }
 
     public LiveData<List<PackingCategory>> getCategoriesForTrip(String tripId) {
         return packingDao.getCategoriesForTrip(tripId);
+    }
+
+    public List<PackingCategory> getCategoriesForTripSync(String tripId) {
+        return packingDao.getCategoriesForTripSync(tripId);
     }
 
     public LiveData<List<PackingItem>> getItemsForTrip(String tripId) {
@@ -68,21 +74,60 @@ public class PackingRepository {
 
     public void deleteCategory(String categoryId, String moveToCategoryId) {
         new Thread(() -> {
-            // If moveToCategory provided, move items there; otherwise just delete them
-            if (moveToCategoryId != null) {
-                List<PackingItem> items = packingDao.getItemsForCategory(categoryId).getValue();
-                if (items != null) {
-                    for (PackingItem item : items) {
-                        item.setCategoryId(moveToCategoryId);
-                        packingDao.updateItem(item);
+            try {
+                db.runInTransaction(() -> {
+                    // If moveToCategory provided, move items there; otherwise just delete them
+                    if (moveToCategoryId != null) {
+                        List<PackingItem> items = packingDao.getItemsForTripSync(packingDao.getCategoryByIdSync(categoryId).getTripId());
+                        for (PackingItem item : items) {
+                            if (item.getCategoryId().equals(categoryId)) {
+                                item.setCategoryId(moveToCategoryId);
+                                packingDao.updateItem(item);
+                            }
+                        }
                     }
-                }
-            }
-            PackingCategory category = packingDao.getCategoryByIdSync(categoryId);
-            if (category != null) {
-                packingDao.deleteCategory(category);
+                    PackingCategory category = packingDao.getCategoryByIdSync(categoryId);
+                    if (category != null) {
+                        packingDao.deleteCategory(category);
+                    }
+                });
+            } catch (Exception e) {
+                Log.e("TripSync", "Error deleting category: " + e.getMessage());
             }
         }).start();
+    }
+
+    public boolean validateCategoryName(String tripId, String name) {
+        if (name == null || name.trim().isEmpty() || name.length() > 20) {
+            return false;
+        }
+        // Check for duplicates (case-insensitive)
+        PackingCategory existing = packingDao.getCategoryByNameSync(tripId, name.trim());
+        return existing == null;
+    }
+
+    public boolean validateItemName(String categoryId, String name) {
+        if (name == null || name.trim().isEmpty() || name.length() > 40) {
+            return false;
+        }
+        // Check for duplicates in the same category
+        PackingItem existing = packingDao.getItemByNameSync(categoryId, name.trim());
+        return existing == null;
+    }
+
+    public String getOthersCategoryId(String tripId) {
+        PackingCategory others = packingDao.getOthersCategorySync(tripId);
+        return others != null ? others.getId() : null;
+    }
+
+    public int getPackedCountForTripSync(String tripId) {
+        Integer count = packingDao.getPackedCountForTripSync(tripId);
+        return count != null ? count : 0;
+    }
+
+    public int getTotalCountForTripSync(String tripId) {
+        Integer count = packingDao.getTotalCountForTripSync(tripId);
+        return count != null ? count : 0;
     }
 
     public void createItem(String tripId, String categoryId, String name) {

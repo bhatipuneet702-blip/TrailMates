@@ -33,7 +33,7 @@
         android:id="@+id/btn_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Edit"
+        android:text="@string/edit"
         android:layout_marginEnd="@dimen/spacing_md"
         style="@style/Widget.MaterialComponents.Button.TextButton" />
 
@@ -41,6 +41,6 @@
         android:id="@+id/btn_remove"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Remove"
+        android:text="@string/remove"
         style="@style/Widget.MaterialComponents.Button.TextButton" />
 </LinearLayout>

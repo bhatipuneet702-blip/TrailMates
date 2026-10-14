@@ -101,4 +101,42 @@
     <string name="settle_up">Settle Up</string>
     <string name="owes">%s owes %s ₹%s</string>
     <string name="create_trip_empty_state">No trips yet. Create one!</string>
+    <string name="all_settled">all settled</string>
+    <string name="shopping">Shopping</string>
+    
+    <!-- Hardcoded strings from layouts -->
+    <string name="edit">Edit</string>
+    <string name="remove">Remove</string>
+    <string name="dinner_sample">Dinner at Johnson\'s Cafe</string>
+    <string name="rupee_zero">₹0</string>
+    <string name="rupee_2400">₹2,400</string>
+    <string name="sample_date">14 Jan 2025</string>
+    <string name="sample_packing_item">T-shirt</string>
+    <string name="video_duration">0:28</string>
+    <string name="this_trip">this trip</string>
+    
+    <!-- Packing Strings -->
+    <string name="add_category">+ Add Category</string>
+    <string name="packing_private">Private - only you can see this</string>
+    <string name="no_items_in_category">No items in this category. Tap + Add Item.</string>
+    <string name="all_packed">All packed! 🎉</string>
+    <string name="packing_counter">%s (%d/%d)</string>
+    <string name="category_name_hint">Category name</string>
+    <string name="add_packing_category">Add Category</string>
+    <string name="rename_category">Rename Category</string>
+    <string name="delete_category">Delete Category</string>
+    <string name="move_to_others">Move items to Others</string>
+    <string name="delete_items_too">Delete items too</string>
+    <string name="invalid_category_name">Category name cannot be blank and must be under 20 characters</string>
+    <string name="duplicate_category">Category already exists</string>
+    <string name="edit_item">Edit Item</string>
+    <string name="item_name_hint">Item name</string>
+    <string name="invalid_item_name">Item name cannot be blank and must be under 40 characters</string>
+    <string name="duplicate_item">Item already exists in this category</string>
+    <string name="item_undo">Undo</string>
+    <string name="item_deleted">Item deleted</string>
+    <string name="cannot_delete_others">Cannot delete the Others category</string>
+    <string name="create_trip_first_packing">Create a trip first to add items</string>
+    <string name="lock_icon_description">Private</string>
+    <string name="remove_item">Remove item</string>
 </resources>

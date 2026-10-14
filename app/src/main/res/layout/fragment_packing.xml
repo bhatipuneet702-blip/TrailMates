@@ -29,117 +29,109 @@
                 app:cardCornerRadius="@dimen/radius_lg"
                 app:cardElevation="2dp">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="vertical"
                     android:padding="@dimen/spacing_lg">
 
-                    <TextView
-                        android:id="@+id/tv_progress_label"
-                        android:layout_width="wrap_content"
+                    <!-- Progress Title and Count Row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/packing_progress"
-                        android:textSize="@dimen/text_size_md"
-                        android:textStyle="bold"
-                        android:textColor="@color/on_surface"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:orientation="horizontal"
+                        android:weightSum="1">
 
-                    <TextView
-                        android:id="@+id/tv_progress_count"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="12/20"
-                        android:textSize="@dimen/text_size_md"
-                        android:textStyle="bold"
-                        android:textColor="@color/success_green"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/tv_progress_label"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/packing_progress"
+                            android:textSize="@dimen/text_size_md"
+                            android:textStyle="bold"
+                            android:textColor="@color/on_surface" />
 
+                        <TextView
+                            android:id="@+id/tv_progress_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0/0"
+                            android:textSize="@dimen/text_size_md"
+                            android:textStyle="bold"
+                            android:textColor="@color/success_green"
+                            android:maxLines="1"
+                            android:ellipsize="end" />
+                    </LinearLayout>
+
+                    <!-- Progress Bar -->
                     <com.google.android.material.progressindicator.LinearProgressIndicator
                         android:id="@+id/progress_bar"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="8dp"
-                        android:layout_marginTop="@dimen/spacing_md"
-                        android:progress="60"
+                        android:layout_marginTop="8dp"
+                        android:progress="0"
                         app:indicatorColor="@color/progress_fill"
-                        app:trackColor="@color/surface_variant"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tv_progress_label" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                        app:trackColor="@color/surface_variant" />
+
+                    <!-- Private Label -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/spacing_md">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_lock"
+                            android:tint="@color/text_secondary"
+                            android:contentDescription="@string/lock_icon_description"
+                            android:layout_marginEnd="4dp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/packing_private"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_secondary"
+                            android:maxLines="1"
+                            android:ellipsize="end" />
+                    </LinearLayout>
+                </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Filter Chips -->
-            <com.google.android.material.chip.ChipGroup
-                android:id="@+id/chip_group_filters"
+            <!-- Filter Chips (Horizontal Scrollable) -->
+            <HorizontalScrollView
+                android:id="@+id/chip_scroll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/spacing_lg"
-                app:selectionRequired="true"
-                app:singleSelection="true">
+                android:scrollbars="none"
+                android:overScrollMode="never">
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chip_all"
+                <LinearLayout
+                    android:id="@+id/chip_container"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/filter_all"
-                    android:checked="true"
-                    app:chipBackgroundColor="@color/secondary"
-                    app:chipStrokeColor="@color/secondary" />
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chip_clothes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/filter_clothes"
-                    app:chipBackgroundColor="@color/surface"
-                    app:chipStrokeColor="@color/surface_variant" />
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chip_toiletries"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/filter_toiletries"
-                    app:chipBackgroundColor="@color/surface"
-                    app:chipStrokeColor="@color/surface_variant" />
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chip_electronics"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/filter_electronics"
-                    app:chipBackgroundColor="@color/surface"
-                    app:chipStrokeColor="@color/surface_variant" />
-            </com.google.android.material.chip.ChipGroup>
+                    android:orientation="horizontal"
+                    android:spacing="8dp" />
+            </HorizontalScrollView>
 
             <!-- Add Item Button -->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_add_item"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/spacing_lg">
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btn_add_item"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_add_item"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/add_item"
-                    android:textSize="@dimen/text_size_sm"
-                    android:backgroundTint="@color/primary"
-                    android:textColor="@color/on_primary"
-                    app:cornerRadius="@dimen/radius_md"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                android:text="@string/add_item"
+                android:textSize="@dimen/text_size_sm"
+                android:backgroundTint="@color/primary"
+                android:textColor="@color/on_primary"
+                app:cornerRadius="@dimen/radius_md"
+                app:icon="@drawable/ic_add"
+                app:iconGravity="textStart"
+                android:layout_marginBottom="@dimen/spacing_lg" />
 
             <!-- Packing Items RecyclerView -->
             <androidx.recyclerview.widget.RecyclerView

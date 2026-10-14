@@ -44,6 +44,9 @@ public interface ExpenseDao {
     @Query("SELECT memberId FROM expense_participants WHERE expenseId = :expenseId")
     List<String> getParticipantIdsForExpense(String expenseId);
 
+    @Query("SELECT memberId FROM expense_participants WHERE expenseId = :expenseId")
+    List<String> getParticipantIdsForExpenseSync(String expenseId);
+
     @Query("SELECT SUM(amountInPaise) FROM expenses WHERE tripId = :tripId")
     LiveData<Long> getTotalExpensesForTrip(String tripId);
 

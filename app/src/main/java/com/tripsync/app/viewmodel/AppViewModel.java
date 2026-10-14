@@ -23,7 +23,7 @@ import java.util.List;
 public class AppViewModel extends AndroidViewModel {
     private final TripRepository tripRepository;
     private final ExpenseRepository expenseRepository;
-    private final PackingRepository packingRepository;
+    public final PackingRepository packingRepository;
     private final MediaRepository mediaRepository;
 
     private final MutableLiveData<String> currentTripId = new MutableLiveData<>();
@@ -231,5 +231,27 @@ public class AppViewModel extends AndroidViewModel {
 
     public void deleteMultipleMediaItems(List<String> itemIds) {
         mediaRepository.deleteMultipleMedia(itemIds);
+    }
+
+    // Packing progress calculation
+    public int getPackedCountForTrip(String tripId) {
+        return packingRepository.getPackedCountForTripSync(tripId);
+    }
+
+    public int getTotalCountForTrip(String tripId) {
+        return packingRepository.getTotalCountForTripSync(tripId);
+    }
+
+    public int getProgress(String tripId) {
+        int total = getTotalCountForTrip(tripId);
+        if (total == 0) return 0;
+        int packed = getPackedCountForTrip(tripId);
+        return (int) ((packed * 100.0) / total);
+    }
+
+    public String getProgressText(String tripId) {
+        int packed = getPackedCountForTrip(tripId);
+        int total = getTotalCountForTrip(tripId);
+        return String.format("%d/%d", packed, total);
     }
 }

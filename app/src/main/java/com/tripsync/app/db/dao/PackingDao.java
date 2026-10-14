@@ -66,4 +66,19 @@ public interface PackingDao {
 
     @Query("SELECT COUNT(*) FROM packing_items WHERE tripId = :tripId")
     LiveData<Integer> getTotalCountForTrip(String tripId);
+
+    @Query("SELECT COUNT(*) FROM packing_items WHERE tripId = :tripId AND isPacked = 1")
+    Integer getPackedCountForTripSync(String tripId);
+
+    @Query("SELECT COUNT(*) FROM packing_items WHERE tripId = :tripId")
+    Integer getTotalCountForTripSync(String tripId);
+
+    @Query("SELECT * FROM packing_categories WHERE tripId = :tripId AND name LIKE :name COLLATE NOCASE LIMIT 1")
+    PackingCategory getCategoryByNameSync(String tripId, String name);
+
+    @Query("SELECT * FROM packing_items WHERE categoryId = :categoryId AND name LIKE :name COLLATE NOCASE LIMIT 1")
+    PackingItem getItemByNameSync(String categoryId, String name);
+
+    @Query("SELECT * FROM packing_categories WHERE tripId = :tripId AND name = 'Others' LIMIT 1")
+    PackingCategory getOthersCategorySync(String tripId);
 }

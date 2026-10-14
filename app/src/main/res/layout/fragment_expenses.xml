@@ -22,144 +22,162 @@
             android:padding="@dimen/spacing_lg">
 
             <!-- Summary Cards Row -->
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
                 android:layout_marginBottom="@dimen/spacing_lg">
 
                 <!-- Total Expenses Card -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card_total_expenses"
                     android:layout_width="0dp"
-                    android:layout_height="120dp"
-                    android:layout_marginEnd="@dimen/spacing_md"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
                     app:cardCornerRadius="@dimen/radius_lg"
-                    app:cardElevation="2dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/card_balance"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent">
+                    app:cardElevation="2dp">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
                         android:padding="@dimen/spacing_lg">
 
-                        <View
-                            android:id="@+id/icon_background_food"
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:background="@drawable/shape_card_background"
-                            android:backgroundTint="@color/accent_food_light"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                        <!-- Icon tile -->
+                        <FrameLayout
+                            android:layout_width="40dp"
+                            android:layout_height="40dp">
 
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:src="@drawable/ic_category_food"
-                            android:contentDescription="@string/total_expenses"
-                            app:layout_constraintStart_toStartOf="@id/icon_background_food"
-                            app:layout_constraintEnd_toEndOf="@id/icon_background_food"
-                            app:layout_constraintTop_toTopOf="@id/icon_background_food"
-                            app:layout_constraintBottom_toBottomOf="@id/icon_background_food" />
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/shape_card_background"
+                                android:backgroundTint="#FFF3E0" />
 
+                            <ImageView
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_account_balance_wallet"
+                                android:contentDescription="@string/total_expenses"
+                                android:tint="#F28C28" />
+                        </FrameLayout>
+
+                        <!-- Label -->
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/spacing_sm"
+                            android:layout_marginTop="12dp"
                             android:text="@string/total_expenses"
-                            android:textSize="@dimen/text_size_xs"
+                            android:textSize="13sp"
                             android:textColor="@color/text_secondary"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/icon_background_food" />
+                            android:maxLines="1"
+                            android:ellipsize="end" />
 
+                        <!-- Value -->
                         <TextView
                             android:id="@+id/tv_total_amount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/rupee_zero"
+                            android:textStyle="bold"
+                            android:textSize="22sp"
+                            android:textColor="@color/on_surface"
+                            android:maxLines="1"
+                            android:layout_marginTop="2dp"
+                            android:autoSizeTextType="uniform"
+                            android:autoSizeMinTextSize="14sp"
+                            android:autoSizeMaxTextSize="22sp"
+                            android:autoSizeStepGranularity="1sp" />
+
+                        <!-- Caption (invisible to maintain height) -->
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="₹12,450"
-                            android:textSize="@dimen/text_size_lg"
-                            android:textStyle="bold"
-                            android:textColor="@color/on_surface"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/icon_background_food"
-                            app:layout_constraintBottom_toBottomOf="parent" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                            android:text="@string/this_trip"
+                            android:textSize="12sp"
+                            android:maxLines="1"
+                            android:visibility="invisible" />
+                    </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
                 <!-- Your Balance Card -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card_balance"
                     android:layout_width="0dp"
-                    android:layout_height="120dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"
                     app:cardCornerRadius="@dimen/radius_lg"
-                    app:cardElevation="2dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/card_total_expenses"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent">
+                    app:cardElevation="2dp">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
                         android:padding="@dimen/spacing_lg">
 
-                        <View
-                            android:id="@+id/icon_background_people"
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:background="@drawable/shape_card_background"
-                            android:backgroundTint="@color/accent_people_light"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                        <!-- Icon tile -->
+                        <FrameLayout
+                            android:layout_width="40dp"
+                            android:layout_height="40dp">
 
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:src="@drawable/ic_add"
-                            android:tint="@color/accent_people"
-                            android:contentDescription="@string/your_balance"
-                            app:layout_constraintStart_toStartOf="@id/icon_background_people"
-                            app:layout_constraintEnd_toEndOf="@id/icon_background_people"
-                            app:layout_constraintTop_toTopOf="@id/icon_background_people"
-                            app:layout_constraintBottom_toBottomOf="@id/icon_background_people" />
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/shape_card_background"
+                                android:backgroundTint="#E8F5E9" />
 
+                            <ImageView
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_account_balance_wallet"
+                                android:contentDescription="@string/your_balance"
+                                android:tint="#3DAA6D" />
+                        </FrameLayout>
+
+                        <!-- Label -->
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/spacing_sm"
+                            android:layout_marginTop="12dp"
                             android:text="@string/your_balance"
-                            android:textSize="@dimen/text_size_xs"
+                            android:textSize="13sp"
                             android:textColor="@color/text_secondary"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/icon_background_people" />
+                            android:maxLines="1"
+                            android:ellipsize="end" />
 
+                        <!-- Value -->
                         <TextView
                             android:id="@+id/tv_balance_amount"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="+ ₹620"
-                            android:textSize="@dimen/text_size_lg"
+                            android:text="@string/rupee_zero"
                             android:textStyle="bold"
+                            android:textSize="22sp"
                             android:textColor="@color/success_green"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/icon_background_people"
-                            app:layout_constraintBottom_toBottomOf="parent" />
+                            android:maxLines="1"
+                            android:layout_marginTop="2dp"
+                            android:autoSizeTextType="uniform"
+                            android:autoSizeMinTextSize="14sp"
+                            android:autoSizeMaxTextSize="22sp"
+                            android:autoSizeStepGranularity="1sp" />
 
+                        <!-- Caption -->
                         <TextView
                             android:id="@+id/tv_balance_caption"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/you_should_receive"
-                            android:textSize="@dimen/text_size_xs"
+                            android:textSize="12sp"
                             android:textColor="@color/text_secondary"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/tv_balance_amount" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                            android:maxLines="1" />
+                    </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
 
             <!-- Add Expense Button -->
             <com.google.android.material.button.MaterialButton
@@ -192,6 +210,7 @@
                     app:layout_constraintBottom_toBottomOf="parent" />
 
                 <TextView
+                    android:id="@+id/tv_see_all"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/see_all"

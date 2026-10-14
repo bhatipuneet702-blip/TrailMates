@@ -99,9 +99,6 @@ public class MainActivity extends AppCompatActivity {
             }
             return false;
         });
-
-        // Handle menu click
-        binding.iconMenu.setOnClickListener(v -> showTripMenu());
     }
 
     private void updateTripSelectorSubtitle() {
@@ -123,10 +120,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String formatDateRange(long startMillis, long endMillis) {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd MMM", Locale.getDefault());
-        String start = sdf.format(new Date(startMillis));
-        String end = sdf.format(new Date(endMillis));
-        return start + " - " + end;
+        SimpleDateFormat sdfWithYear = new SimpleDateFormat("dd MMM yyyy", Locale.getDefault());
+        SimpleDateFormat sdfNoYear = new SimpleDateFormat("dd MMM", Locale.getDefault());
+        
+        Date startDate = new Date(startMillis);
+        Date endDate = new Date(endMillis);
+        
+        Calendar startCal = Calendar.getInstance();
+        startCal.setTime(startDate);
+        
+        Calendar endCal = Calendar.getInstance();
+        endCal.setTime(endDate);
+        
+        // If different years, show year for both dates
+        if (startCal.get(Calendar.YEAR) != endCal.get(Calendar.YEAR)) {
+            return sdfWithYear.format(startDate) + " - " + sdfWithYear.format(endDate);
+        } else {
+            // Same year, show year only once at the end
+            return sdfNoYear.format(startDate) + " - " + sdfWithYear.format(endDate);
+        }
     }
 
     private void showTripSelector() {
