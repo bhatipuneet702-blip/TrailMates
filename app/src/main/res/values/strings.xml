@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TrailMates</string>
+    
+    <!-- Navigation -->
+    <string name="nav_expenses">Expenses</string>
+    <string name="nav_packing">Packing List</string>
+    <string name="nav_gallery">Media Gallery</string>
+    
+    <!-- Expenses Screen -->
+    <string name="trip_expenses">Trip Expenses</string>
+    <string name="total_expenses">Total Expenses</string>
+    <string name="your_balance">Your Balance</string>
+    <string name="you_should_receive">you should receive</string>
+    <string name="you_owe">you owe</string>
+    <string name="add_new_expense">+ Add New Expense</string>
+    <string name="recent_expenses">Recent Expenses</string>
+    <string name="see_all">See All</string>
+    <string name="paid_by">Paid by %s</string>
+    <string name="no_expenses_yet">No expenses yet. Start tracking!</string>
+    
+    <!-- Add Expense Dialog -->
+    <string name="add_expense">Add Expense</string>
+    <string name="expense_description">Description</string>
+    <string name="expense_amount">Amount</string>
+    <string name="payer">Payer</string>
+    <string name="participants">Participants</string>
+    <string name="split_equally">Split equally</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    
+    <!-- Packing List Screen -->
+    <string name="my_packing_list">My Packing List</string>
+    <string name="pack_light">Pack light, Travel far</string>
+    <string name="packing_progress">Packing Progress</string>
+    <string name="packed_count">%d/%d</string>
+    <string name="filter_all">All</string>
+    <string name="filter_clothes">Clothes</string>
+    <string name="filter_toiletries">Toiletries</string>
+    <string name="filter_electronics">Electronics</string>
+    <string name="filter_others">Others</string>
+    <string name="add_item">+ Add Item</string>
+    <string name="category_counter">%s (%d/%d)</string>
+    <string name="private_packing">Private - only you can see this</string>
+    <string name="no_packing_items_yet">No packing items yet</string>
+    
+    <!-- Gallery Screen -->
+    <string name="trip_memories">Trip Memories</string>
+    <string name="good_friends">Good friends, Great places,\nUnforgettable memories</string>
+    <string name="gallery_all">All</string>
+    <string name="gallery_photos">Photos</string>
+    <string name="gallery_videos">Videos</string>
+    <string name="gallery_favorites">Favorites</string>
+    <string name="items_count">%d items</string>
+    <string name="no_media_yet">No media yet. Add some memories!</string>
+    
+    <!-- Common -->
+    <string name="manali_trip">Manali Trip</string>
+    <string name="trip_members">%d members • %s</string>
+    <string name="currency_format">₹%,.0f</string>
+    <string name="balance_positive">+ ₹%,.0f</string>
+    <string name="balance_negative">- ₹%,.0f</string>
+    
+    <!-- Menu Labels -->
+    <string name="title_expenses">Expenses</string>
+    <string name="title_packing">Packing List</string>
+    <string name="title_gallery">Gallery</string>
+    
+    <!-- Dialog Hints -->
+    <string name="expense_description_hint">Description</string>
+    <string name="expense_amount_hint">Amount</string>
+    <string name="expense_payer_hint">Payer</string>
+    <string name="packing_item_hint">Item name</string>
+    
+    <!-- Missing Strings -->
+    <string name="add">Add</string>
+    <string name="add_packing_item">Add Packing Item</string>
+    <string name="packing_progress_format">%d/%d</string>
+    
+    <!-- Trip Related -->
+    <string name="trip_meta">%d members • %s</string>
+    <string name="create_trip">Create Trip</string>
+    <string name="edit_trip">Edit Trip</string>
+    <string name="delete_trip">Delete Trip</string>
+    <string name="manage_members">Manage Members</string>
+    <string name="trip_name">Trip Name</string>
+    <string name="trip_dates">Trip Dates</string>
+    <string name="start_date">Start Date</string>
+    <string name="end_date">End Date</string>
+    <string name="member_name">Member Name</string>
+    <string name="you">You</string>
+    <string name="add_member">Add Member</string>
+    <string name="remove_member">Remove</string>
+    <string name="rename_member">Rename</string>
+    <string name="new_trip">+ New Trip</string>
+    <string name="select_trip">Select Trip</string>
+    <string name="no_trips">No trips yet. Create one to get started!</string>
+    <string name="confirm_delete_trip">Delete this trip and all its data?</string>
+    <string name="trip_deleted">Trip deleted</string>
+    <string name="undo">Undo</string>
+    <string name="settle_up">Settle Up</string>
+    <string name="owes">%s owes %s ₹%s</string>
+    <string name="create_trip_empty_state">No trips yet. Create one!</string>
+</resources>
